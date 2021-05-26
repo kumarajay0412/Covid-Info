@@ -1,20 +1,22 @@
 import React, {  useState,  useEffect } from 'react';
+import {Container, AppBar, Typography, Grow, Grid} from '@material-ui/core';
 import {patientData} from './api/index';
 import Districtmap from'./Components/districtmap'
 import Getadress from'./Components/Getadress'
 import Header from'./Components/header/Header';
-import Homecard from'./Components/Cards/Homecard';
+import Main from'./Components/Main';
+
 const App =()=>{
     // const watch = true;
     // const {latitude, longitude, error} = usePosition();
-    useEffect(() => {
-        const fetcher =async()=>{
-        const fetchedData = await (patientData());
-        if(!fetchedData){
-        console.log(fetchedData)
-        }}
-        fetcher();
-      }); 
+    // useEffect(() => {
+    //     const fetcher =async()=>{
+    //     const fetchedData = await (patientData());
+    //     if(!fetchedData){
+    //     console.log(fetchedData)
+    //     }}
+    //     fetcher();
+    //   }); 
     // const [District, setDistrict] = useState(null);
     // const [State, setState] = useState(null);
   
@@ -25,11 +27,17 @@ const App =()=>{
     // setDistrict(d);
 
     return (
-      <div className="App">
+      <Container maxWidth="lg">
         {/* <Getadress/> */}
         <Header/>
-        <Homecard/>
-      </div>
+        <br></br>
+        <br></br>
+        <br></br>
+
+        <br></br>
+        <br></br>
+       <Main/>
+       </Container>
 
     );
   }
