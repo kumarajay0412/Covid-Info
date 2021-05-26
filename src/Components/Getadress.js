@@ -12,8 +12,8 @@ function Getadress() {
     Geocode.setApiKey("AIzaSyDfzPQSyJEov2pNQELey3g56OUilFiyNUY");
     Geocode.setLanguage("en");
     Geocode.setRegion("IN");
-  useEffect(() => {
-      console.log(latitude,longitude,State,District)
+    useEffect(() => {
+    console.log(latitude,longitude,State,District)
     if((State==null || District==null )&& latitude!==null){
     Geocode.fromLatLng(latitude, longitude).then(
       response => {

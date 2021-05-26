@@ -5,7 +5,7 @@ export default makeStyles({
 
   highlight: {
     fontFamily: 'Poppins',
-    fontSize: 50,
+    fontSize: 35,
     position: 'absolute',
     fontStyle: 'bold',
     fontWeight: 'fontWeightBold',

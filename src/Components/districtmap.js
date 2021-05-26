@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-
 import {withScriptjs,withGoogleMap,GoogleMap,Marker,Circle} from "react-google-maps";
-
 
 function Districtmap( ){
     const [latitude, setLatitude] = useState(null);
     const [longitude, setLongitude] = useState(null);
-    
     const getGeoLocation = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
@@ -20,9 +17,7 @@ function Districtmap( ){
             console.log("error")
         }
     }
-
     getGeoLocation()
-
     const MapWithAMarker = withScriptjs(withGoogleMap(props =>
         <GoogleMap
           defaultZoom={10.5}
@@ -44,9 +39,6 @@ function Districtmap( ){
             />
         </GoogleMap>
       ));
-   
-
-
     return ( <MapWithAMarker
         googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfzPQSyJEov2pNQELey3g56OUilFiyNUY&v=3.exp&libraries=geometry,drawing,places"
         loadingElement={<div style={{ height: `50%` }} />}
