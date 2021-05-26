@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {  useState,  useEffect } from 'react';
+import {patientData} from './api/index';
+import Districtmap from'./Components/districtmap'
+import Getadress from'./Components/Getadress'
+import Header from'./Components/header/Header';
+import Homecard from'./Components/Cards/Homecard';
+const App =()=>{
+    // const watch = true;
+    // const {latitude, longitude, error} = usePosition();
+    useEffect(() => {
+        const fetcher =async()=>{
+        const fetchedData = await (patientData());
+        if(!fetchedData){
+        console.log(fetchedData)
+        }}
+        fetcher();
+      }); 
+    // const [District, setDistrict] = useState(null);
+    // const [State, setState] = useState(null);
+  
+    // console.log(State,District)
+    // //  useEffect(() => {
+    //     const {s,d} = Getadress();
+    // setState(s);
+    // setDistrict(d);
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    return (
+      <div className="App">
+        {/* <Getadress/> */}
+        <Header/>
+        <Homecard/>
+      </div>
+
+    );
+  }
+
 
 export default App;
