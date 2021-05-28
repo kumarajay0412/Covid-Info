@@ -35,7 +35,7 @@ export const patientData = async () => {
 
   export const vaccineData = async () => {
     try {
-        const response = await  axios.get('https://sheetdb.io/api/v1/8qrabjsbxyauh');
+        const response = await  axios.get('https://sheetdb.io/api/v1/foeh194fd24g6');
         const data= response.data;
       return data;
     } catch (error) {

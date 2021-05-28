@@ -21,7 +21,7 @@ function Statecard({Sta,Dis,Code}) {
           for (var i=0; i<data1.length; i++) {
             if(data2[i].localeCompare(Code)===0){
                 const statedata=data1[i].total;
-                const statedata2=data1[i].delta;
+                const statedata2=data1[i].delta7;
                 setTetsed(statedata2.tested);
                 setVaccinated(statedata.vaccinated);
                 break;
@@ -60,7 +60,7 @@ function Statecard({Sta,Dis,Code}) {
                              <Grid container spacing={7} >
                                     <Grid item xs={12}>
                                         <Grid  container spacing={0} >
-                                            <Grid item xs={12}>  <Typography className={classes.normal2}>Covid Test done today</Typography> </Grid>
+                                            <Grid item xs={12}>  <Typography className={classes.normal2}>Covid Test done in Last 7days</Typography> </Grid>
                                             <br></br>
                                             <br></br>
                                             <Grid item xs={4}>  <Typography className={classes.highlight}>  {Tetsed} </Typography> </Grid>
@@ -69,7 +69,7 @@ function Statecard({Sta,Dis,Code}) {
                             </Grid>  
                             <br></br>
                             <br></br>
-                            <br></br>
+                            <br></br> <br></br>
                             <Grid  container spacing={0} >
                             
                                     <Grid item xs={12}>  <Typography className={classes.normal}>Vaccination Status : </Typography> </Grid>

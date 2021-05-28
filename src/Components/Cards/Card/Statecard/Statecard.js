@@ -24,8 +24,11 @@ function Statecard({Sta,Dis,Code}) {
           var key = -1
           for (var i=0; i<data1.length; i++) {
             if(data2[i].localeCompare(Code)===0){
-                const statedata=data1[i].total;
-                const statedata2=data1[i].delta;
+                const statedata    =data1[i].total;
+                const statedata2   =data1[i].delta7;
+                console.log(data1[i])
+                console.log(statedata2)
+                console.log(statedata)
                 setInfected(statedata.confirmed)
                 setRecovered(statedata.recovered)
                 setDeath(statedata.deceased)
@@ -49,10 +52,10 @@ function Statecard({Sta,Dis,Code}) {
                             <Grid item xs={5}>  <Typography className={classes.normal}> You are in</Typography> </Grid>
                             <Grid item xs={7}>  <Typography className={classes.highlight}> {Sta}</Typography> </Grid>
                             </Grid>
-                            
+                            <br></br>
                             {/* In 24 hr cases */}
                             <Grid  container spacing={1} >
-                            <Grid item xs={12}>  <Typography className={classes.normal}>Covid Cases in Last 24hr :</Typography> </Grid>
+                            <Grid item xs={12}>  <Typography className={classes.normal2}>Covid Cases in Last 7days</Typography> </Grid>
                             </Grid>
                             <br></br>
                             <Grid  container spacing={5} >

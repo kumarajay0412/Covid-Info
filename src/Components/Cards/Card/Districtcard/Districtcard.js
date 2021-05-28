@@ -45,6 +45,7 @@ function Districtcard({Sta,Dis,Code}) {
                             <Grid item xs={5}>  <Typography className={classes.normal}> You are in</Typography> </Grid>
                             <Grid item xs={7}>  <Typography className={classes.highlight}> {Dis}</Typography> </Grid>
                             <br></br>
+                            <br></br>
                             <Grid item xs={12}>  <Typography className={classes.normal}> With Total cases :</Typography> </Grid>
                             <Grid item xs={12}>  <Typography className={classes.normal5}> Delhi district level data not available  </Typography> </Grid>
                             </Grid>
