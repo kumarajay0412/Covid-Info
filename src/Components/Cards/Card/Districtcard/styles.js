@@ -46,7 +46,7 @@ export default makeStyles({
   },
   highlight: {
     fontFamily: 'Poppins',
-    fontSize: 20,
+    fontSize: 18,
     position: 'absolute',
     fontStyle: 'bold',
     fontWeight: 'fontWeightBold',
@@ -63,8 +63,11 @@ export default makeStyles({
     fontFamily: 'Poppins',
     fontSize: 16,
     color: 'rgba(51, 51, 51, 1)',
-
-    
+  },
+  normal5: {
+    fontFamily: 'Poppins',
+    fontSize: 9,
+    color: 'rgba(236, 88, 99, 1)',
   },
   grid: {
     display: 'flex',

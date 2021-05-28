@@ -54,6 +54,14 @@ export default makeStyles({
     fontWeight: 'fontWeightBold',
     color: 'rgba(51, 51, 51, 1)',
   },
+  black1: {
+    fontFamily: 'Poppins',
+    fontSize: 18,
+    position: 'absolute',
+    fontStyle: 'bold',
+    fontWeight: 'fontWeightBold',
+    color: 'rgba(51, 51, 51, 1)',
+  },
   yellow: {
     fontFamily: 'Poppins',
     fontSize: 23,
@@ -65,6 +73,22 @@ export default makeStyles({
   red: {
     fontFamily: 'Poppins',
     fontSize: 23,
+    position: 'absolute',
+    fontStyle: 'bold',
+    fontWeight: 'fontWeightBold',
+    color: 'rgba(236, 88, 99, 1)',
+  },
+  red1: {
+    fontFamily: 'Poppins',
+    fontSize: 18,
+    position: 'absolute',
+    fontStyle: 'bold',
+    fontWeight: 'fontWeightBold',
+    color: 'rgba(236, 88, 99, 1)',
+  },
+  red2: {
+    fontFamily: 'Poppins',
+    fontSize: 30,
     position: 'absolute',
     fontStyle: 'bold',
     fontWeight: 'fontWeightBold',

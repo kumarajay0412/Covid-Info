@@ -42,7 +42,7 @@ function Districtmap( ){
     return ( <MapWithAMarker
         googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfzPQSyJEov2pNQELey3g56OUilFiyNUY&v=3.exp&libraries=geometry,drawing,places"
         loadingElement={<div style={{ height: `50%` }} />}
-        containerElement={<div style={{ height: `400px` }} />}
+        containerElement={<div style={{ height: `170px` }} />}
         mapElement={<div style={{ height: `100%` }} />}
       />
       );
