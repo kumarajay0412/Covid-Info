@@ -5,6 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import array from './Table'
 import axios from 'axios';
 import jso from './state.json'
+import Searchcard from './../Cards/Card/Search/Search';
+
 const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
@@ -16,11 +18,9 @@ const useStyles = makeStyles((theme) => ({
 
 const App = () => {
     const classes = useStyles();
-
-   
-
     const [allData,setAllData] = useState([]);
     const [filteredData,setFilteredData] = useState(allData);
+    const[Place ,setPlace] = useState(null);
     
     const handleSearch = (event) => {
         let value = event.target.value;
@@ -32,11 +32,14 @@ const App = () => {
         });
 
         setFilteredData(result);
+        console.log(result);
+        console.log(filteredData[0]);
+        setPlace(filteredData[0].name1);
+        console.log(Place);
+     
+            <Searchcard Place={Place}/>
+            
     }
-
-      const arr= Object.assign({}, array);
-      
-    console.log(filteredData[0],filteredData)
 
     useEffect(() => {
         axios('https://api.covid19india.org/v4/min/data.min.json')
@@ -62,10 +65,9 @@ const App = () => {
             shrink: true,
           }}
         />
-            {/* <div style={{ margin: '0 auto', marginTop: '10%' }}>
-                <input type="text" onChange={(event) =>handleSearch(event)} />
-            </div> */}
-        
+        {/* { !(Place)? <div/> : (
+           <Searchcard Place={Place}/>
+          )  } */}
         </div>
     );
 }

@@ -3,7 +3,6 @@ import {Container,CircularProgress} from '@material-ui/core';
 import Getadress from'./Components/Getadress'
 import Header from'./Components/header/Header';
 import Main from'./Components/Main';
-import Search from './Components/Search/Search'
 import Search1 from './Components/Search/Search1'
 import Cards from './Components/Cards/Card/Search/Search'
 const App =()=>{

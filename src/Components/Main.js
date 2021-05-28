@@ -16,6 +16,7 @@ function Main({Sta,Dis}) {
     ,"Punjab","Rajasthan","Sikkim","Tamil Nadu","Tripura","Uttarakhand","Uttar Pradesh","West Bengal","Tamil Nadu","Tripura","Andaman and Nicobar Islands","Chandigarh"
         ,"Dadra and Nagar Haveli","Daman and Diu","Lakshadweep","Pondicherry"];
     var code = ["DL","AP","AR","AS","BR","CG","GA","GJ","HR","HP","JK","JH","KA","KL","MP","MH","MN","ML","MZ","NL","OR","PB","RJ","SK","TN","TR","UK","UP","WB","TN","TR","AN","CH","DH","DD","LD","PY"];
+    
     useEffect(() => {
     if(Sta){
     for (var i=0; i<name.length; i++) {

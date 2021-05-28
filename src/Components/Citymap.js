@@ -28,7 +28,7 @@ function Citymap() {
 
       const MapWithAMarker = withScriptjs(withGoogleMap(props =>
         <GoogleMap
-          defaultZoom={4.5}
+          defaultZoom={5.5}
           defaultCenter={{ lat:latitude, lng: longitude }}
         >
           <Marker

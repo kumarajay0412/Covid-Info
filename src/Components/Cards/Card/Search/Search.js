@@ -1,7 +1,7 @@
 import React, {  useState,  useEffect } from 'react';
 import useStyles from './styles';
 import {Card,CardContent, Typography} from '@material-ui/core';
-import {IndiapatientData} from'../../../../api/index'
+import {patientData} from'../../../../api/index'
 import Grid from '@material-ui/core/Grid';
 import infected from '../../../../assets/Infected.svg';
 import recovered from '../../../../assets/recovered.svg';
@@ -10,28 +10,51 @@ import common from '../../../../assets/common.png';
 import CountTo from 'react-count-to';
 import Citymap from '../../../Citymap';
 
-function Search() {
+function Search({Place}) {
     const [Recoverd, setRecovered] = useState(0);
     const [Infected, setInfected] = useState(0);
     const [Death, setDeath] = useState(0);
-    const [Recoverd1, setRecovered1] = useState(0);
-    const [Infected1, setInfected1] = useState(0);
-    const [Death1, setDeath1] = useState(0);
-    const [Active, setActive] = useState(0);
-    const [Active1, setActive1] = useState(0);
+    var name = ["Delhi","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir",
+    "Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Orissa"
+    ,"Punjab","Rajasthan","Sikkim","Tamil Nadu","Tripura","Uttarakhand","Uttar Pradesh","West Bengal","Tamil Nadu","Tripura","Andaman and Nicobar Islands","Chandigarh"
+        ,"Dadra and Nagar Haveli","Daman and Diu","Lakshadweep","Pondicherry"];
+    var code = ["DL","AP","AR","AS","BR","CG","GA","GJ","HR","HP","JK","JH","KA","KL","MP","MH","MN","ML","MZ","NL","OR","PB","RJ","SK","TN","TR","UK","UP","WB","TN","TR","AN","CH","DH","DD","LD","PY"];
+
     const classes = useStyles();
     useEffect(() => {
+        
         const fetcher =async()=>{
-          const fetchedData = await IndiapatientData();
-          const data1 = Object.values(fetchedData);
-            setInfected1( parseInt((data1[3].replace(/,/g , " ")).replace(/ /g,'')))
-            setRecovered1( parseInt((data1[3].replace(/,/g , " ")).replace(/ /g,''))*1.5)
-            setDeath1( parseInt((data1[4].replace(/,/g , " ")).replace(/ /g,'')))
-            setInfected( parseInt((data1[5].replace(/,/g , " ")).replace(/ /g,'')))
-            setRecovered( parseInt((data1[7].replace(/,/g , " ")).replace(/ /g,'')))
-            setDeath(parseInt((data1[6].replace(/,/g , " ")).replace(/ /g,'')))
-            setActive1(parseInt((data1[3].replace(/,/g , " ")).replace(/ /g,'')))
-            setActive(parseInt((data1[0].replace(/,/g , " ")).replace(/ /g,'')))
+            var key = 0;
+            var Place1=null;
+            for (var z=0; z<name.length; z++){
+                if(name[z].toLowerCase()===Place){
+                    Place1 = code[z];
+                    key = 1;
+                    break;
+                }
+              }
+          const fetchedData = await patientData();
+          console.log(fetchedData);
+          for (var j=0; j<fetchedData.length; j++){
+              if(key===1){
+                if(fetchedData[j]===Place1){
+                    setInfected(fetchedData[j].total.confirmed);
+                    setRecovered(fetchedData[j].total.deceased);
+                    setDeath(fetchedData[j].total.recovered);
+                    break;
+                }
+              }
+              else{
+                  var temp=fetchedData[i].districts;
+                for (var i=0; i<temp.length; i++){
+                    if(temp[i].toLowerCase()===Place){
+                        setInfected(temp[i].total.confirmed);
+                        setRecovered(temp[i].total.deceased);
+                        setDeath(temp[i].total.recovered);
+                        break;
+                    }  
+                }}}
+                console.log(Place,Place1)
         }
         fetcher();
       },[]);
@@ -39,10 +62,14 @@ function Search() {
         <div>
             <Grid container spacing={3} direction="column" alignItems="center" justify="center" style={{ minHeight: '50vh' }}>
 
-            <Grid  container spacing={1} >
-
-                    <Grid item xs={12} sm={6} >  <Citymap/> </Grid>
-                                
+                <Grid  container spacing={1} >
+                        <Grid item xs={12} sm={1} >  </Grid>  
+                            <Grid item xs={12} sm={6} >
+                            <Card className={classes.card} elevation={4} expand> 
+                                {/* <Citymap/>  */}
+                            </Card> 
+                            </Grid>
+                        <Grid item xs={12} sm={1} >  </Grid>     
                     <Grid item xs={12} spacing={3} sm={3} >
 
                         <Grid item xs={12}>
