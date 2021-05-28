@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from 'react';
 import useStyles from './styles';
-import background9 from '../../../../assets/image1.svg'
+import background9 from '../../../../assets/image2.svg'
 import {Grid,Card, CardContent,Typography} from '@material-ui/core';
 import {vaccineData} from'../../../../api/index'
 import orangearrow from '../../../../assets/orangearrow.svg';
@@ -53,7 +53,7 @@ function Vaccine() {
                          <br></br>
                          <Grid container spacing={3}>
                         <Grid item xs={4}>  <a><img src={orangearrow} height="50" width="50" alt='corona' /><b></b></a> </Grid>
-                        <Grid item xs={5}>  <Typography className={classes.red2}> {LastTotaldoses}</Typography></Grid>
+                        <Grid item xs={5}>  <Typography className={classes.red2}> {Totaldoses-LastTotaldoses}</Typography></Grid>
                         </Grid>
                         
                       

@@ -32,7 +32,8 @@ function Main({Sta,Dis}) {
              <br></br><br></br><br></br>
             <Homecard Sta={Sta} Dis={Dis} Code={Statecode}/>
             <br></br><br></br>  <br></br><br></br>  <br></br><br></br>  
-            
+            <br></br><br></br>
+            <br></br><br></br>
             <Grid container spacing={0} direction="row" alignItems="center" justify="center" >
                 <Typography className={classes.highlight} alignContent="center" >World Wide Count </Typography>
             </Grid>
@@ -42,6 +43,8 @@ function Main({Sta,Dis}) {
             <Grid container spacing={0} direction="row" alignItems="center" justify="center" >
                 <Typography className={classes.highlight} alignContent="center" >India Count </Typography>
             </Grid>
+            <br></br><br></br>
+            <br></br><br></br>
             <br></br><br></br>
             <Grid container spacing={6} direction="row" alignItems="center" justify="center">
             <Grid item xs={12} sm={6}><Indiacard/> </Grid>

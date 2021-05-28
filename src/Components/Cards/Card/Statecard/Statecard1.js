@@ -3,12 +3,14 @@ import useStyles from './styles';
 import {Card,CardContent,Typography} from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import injection from '../../../../assets/injection.png';
-import {patientData} from '../../../../api/index';
+import {patientData,vaccineData} from '../../../../api/index';
 import CountTo from 'react-count-to';
 
 function Statecard({Sta,Dis,Code}) {
     const [Vaccinated, setVaccinated] = useState(null);
     const [Tetsed, setTetsed] = useState(null);
+    const [Dose1, setDose1] = useState(null);
+    const [Dose2, setDose2] = useState(null);
     const classes = useStyles();
     useEffect(() => {
             const fetcher = async()=>{
@@ -25,8 +27,23 @@ function Statecard({Sta,Dis,Code}) {
                 break;
             } }          
     }
+    const fetcher1 = async()=>{
+        const fetchedData = await vaccineData();
+        console.log(fetchedData)
+        for (var i=0; i<fetchedData.length; i++) {
+            const as =fetchedData[i].State_name;
+            
+          if(as.localeCompare(Sta)===0){
+            
+              setDose1(fetchedData[i].dose1);
+              setDose2(fetchedData[i].dose2);
+              console.log(Dose1,Dose2)
+              break;
+          } }          
+  }
         fetcher();
-      
+        fetcher1();
+        console.log(Dose1,Dose2)
       },[]);
 
     return (
@@ -46,7 +63,7 @@ function Statecard({Sta,Dis,Code}) {
                                             <Grid item xs={12}>  <Typography className={classes.normal2}>Covid Test done today</Typography> </Grid>
                                             <br></br>
                                             <br></br>
-                                            <Grid item xs={4}>  <Typography className={classes.highlight}>  <CountTo to= {Tetsed} speed={4500} /> </Typography> </Grid>
+                                            <Grid item xs={4}>  <Typography className={classes.highlight}>  {Tetsed} </Typography> </Grid>
                                         </Grid>
                                     </Grid> 
                             </Grid>  
@@ -64,18 +81,18 @@ function Statecard({Sta,Dis,Code}) {
                                         <Grid  container spacing={0} >
                                             <Grid item xs={1}>  <Typography className={classes.normal2}></Typography> </Grid>
                                             <Grid item xs={5}>  <Typography className={classes.normal2}>Total :</Typography> </Grid>
-                                            <Grid item xs={6}>  <Typography className={classes.highlight1}> <CountTo to= {Vaccinated}  speed={4500} /></Typography> </Grid>
+                                            <Grid item xs={6}>  <Typography className={classes.highlight1}> {Vaccinated} </Typography> </Grid>
                                         </Grid>
                                         <br></br>
                                         <Grid  container spacing={1} >
                                             <Grid item xs={1}>  <Typography className={classes.normal2}></Typography> </Grid>
                                             <Grid item xs={5}>  <Typography className={classes.normal2}>Dose 1 :</Typography> </Grid>
-                                            <Grid item xs={6}>  <Typography className={classes.highlight1}><CountTo to= {1220} speed={4500} /></Typography> </Grid>
+                                            <Grid item xs={6}>  <Typography className={classes.highlight1}>{Dose1}</Typography> </Grid>
                                         </Grid>
                                         <Grid  container spacing={0} >
                                             <Grid item xs={1}>  <Typography className={classes.normal2}></Typography> </Grid>
                                             <Grid item xs={5}>  <Typography className={classes.normal2}>Dose 2 :</Typography> </Grid>
-                                            <Grid item xs={5}>  <Typography className={classes.highlight1}> <CountTo to= {1233} speed={4500} /></Typography> </Grid>
+                                            <Grid item xs={5}>  <Typography className={classes.highlight1}> {Dose2} </Typography> </Grid>
                                         
                                         </Grid>
                                     </Grid> 

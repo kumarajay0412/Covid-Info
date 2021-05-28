@@ -12,12 +12,6 @@ function Homecard({Sta,Dis,Code}) {
             <Grid item xs={12} sm={3}><Statecard Sta={Sta} Dis={Dis} Code={Code} /></Grid>
             <Grid item xs={12} sm={3}><Statecard1 Sta={Sta} Dis={Dis} Code={Code} /></Grid>
             </Grid>
-
-    
-
-            
-
-            
     )
 }
 
