@@ -3,7 +3,7 @@ import {Container,CircularProgress} from '@material-ui/core';
 import Getadress from'./Components/Getadress'
 import Header from'./Components/header/Header';
 import Main from'./Components/Main';
-import Search1 from './Components/Search/Search1'
+import Search from './Components/Search/Search'
 import Cards from './Components/Cards/Card/Search/Search'
 const App =()=>{
   const [State, setState] = useState(null);
@@ -28,8 +28,8 @@ const App =()=>{
         )} */}
 
         {/* <Search/> */}
-        <Search1/>
-        <Cards/>
+        <Search/>
+        {/* <Cards/> */}
        </Container>
 
     );

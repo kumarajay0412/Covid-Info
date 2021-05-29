@@ -2,7 +2,7 @@ import React, {  useState,  useEffect } from 'react';
 import Geocode from "react-geocode";
 import {withScriptjs,withGoogleMap,GoogleMap,Marker,Circle} from "react-google-maps";
 import {CircularProgress ,Grid } from '@material-ui/core';
-function Citymap() {
+function Citymap({Loc}) {
     const [latitude, setLatitude] = useState(null);
     const [longitude, setLongitude] = useState(null);
 
@@ -11,8 +11,8 @@ function Citymap() {
     Geocode.setRegion("IN");
     
    
-      useEffect(() => {
-        Geocode.fromAddress("Morena").then(
+    //   useEffect(() => {
+        Geocode.fromAddress(Loc).then(
             (response) => {
               const { lat, lng } = response.results[0].geometry.location;
               console.log(lat, lng);
@@ -24,7 +24,7 @@ function Citymap() {
               console.error(error);
             }
           );
-        }, []);
+        // }, []);
 
       const MapWithAMarker = withScriptjs(withGoogleMap(props =>
         <GoogleMap
@@ -47,8 +47,9 @@ function Citymap() {
             />
         </GoogleMap>
       ));
-
-    return (  !(longitude)? < CircularProgress /> : (
+        console.log(Loc,longitude)
+    return (  
+        !(longitude)? < CircularProgress /> : (
             <MapWithAMarker
             googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfzPQSyJEov2pNQELey3g56OUilFiyNUY&v=3.exp&libraries=geometry,drawing,places"
             loadingElement={<div style={{ height: `100%` }} />}
