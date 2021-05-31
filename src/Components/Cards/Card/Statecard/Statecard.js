@@ -26,9 +26,6 @@ function Statecard({Sta,Dis,Code}) {
             if(data2[i].localeCompare(Code)===0){
                 const statedata    =data1[i].total;
                 const statedata2   =data1[i].delta7;
-                console.log(data1[i])
-                console.log(statedata2)
-                console.log(statedata)
                 setInfected(statedata.confirmed)
                 setRecovered(statedata.recovered)
                 setDeath(statedata.deceased)

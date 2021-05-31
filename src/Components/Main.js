@@ -6,6 +6,8 @@ import Homecard from './Cards/Homecard';
 import Worldcard from './Cards/Card/Normalcard/Worldcard'
 import Indiacard from './Cards/Card/Normalcard/Indiacard'
 import Vaccine from './Cards/Card/Normalcard/Vaccine'
+import india from'../assets/in.png';
+import world from'../assets/wo.png';
 
 
 function Main({Sta,Dis}) {
@@ -32,21 +34,26 @@ function Main({Sta,Dis}) {
         <div>
              <br></br><br></br><br></br>
             <Homecard Sta={Sta} Dis={Dis} Code={Statecode}/>
-            <br></br><br></br>  <br></br><br></br>  <br></br><br></br>  
-            <br></br><br></br>
-            <br></br><br></br>
+            <br></br><br></br>  <br></br><br></br>  <br></br>
+          
+    
             <Grid container spacing={0} direction="row" alignItems="center" justify="center" >
-                <Typography className={classes.highlight} alignContent="center" >World Wide Count </Typography>
+                {/* <Typography className={classes.highlight} alignContent="center" >World Wide Count </Typography> */}
+                <a className={classes.image}><img src={world} alt="CovidInfo" width='100%'
+height='100%'></img></a> 
             </Grid>
             <br></br><br></br>
             <Worldcard/>
-            <br></br>  <br></br>
+            <br></br>
             <Grid container spacing={0} direction="row" alignItems="center" justify="center" >
-                <Typography className={classes.highlight} alignContent="center" >India Count </Typography>
+                {/* <Typography className={classes.highlight} alignContent="center" >India Count </Typography> */}
+                   
+                <a className={classes.image}><img src={india} alt="CovidInfo" width='100%'
+height='100%'></img></a> 
+                  
             </Grid>
             <br></br><br></br>
-            <br></br><br></br>
-            <br></br><br></br>
+            
             <Grid container spacing={6} direction="row" alignItems="center" justify="center">
             <Grid item xs={12} sm={6}><Indiacard/> </Grid>
             <Grid item xs={12} sm={6}> <Vaccine/> </Grid>

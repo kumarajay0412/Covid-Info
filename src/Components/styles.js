@@ -5,8 +5,8 @@ export default makeStyles({
 
   highlight: {
     fontFamily: 'Poppins',
-    fontSize: 35,
-    position: 'absolute',
+    fontSize: 20,
+    textAlign: 'center',
     fontStyle: 'bold',
     fontWeight: 'fontWeightBold',
     color: 'rgba(107, 54, 247, 1)',
@@ -15,7 +15,18 @@ export default makeStyles({
     fontFamily: 'Poppins',
     fontSize: 16,
     color: 'rgba(51, 51, 51, 1)',
-
-    
   },
+  normal2: {
+    fontFamily: 'Poppins',
+    fontSize: 24,
+    color: 'rgba(51, 51, 51, 1)',
+        textAlign: 'center',
+        fontStyle: 'bold',
+        
+  },
+  image: {
+    justifyContent: 'center',
+    alignItems: 'center',
+        
+  }
 });

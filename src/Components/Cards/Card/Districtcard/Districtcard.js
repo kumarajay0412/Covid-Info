@@ -18,19 +18,28 @@ function Districtcard({Sta,Dis,Code}) {
       const fetchedData = await patientData();
       const data1 = Object.values(fetchedData);
       const data2 = Object.keys(fetchedData);
+
       for (var i=0; i<data1.length; i++) {
-       
+        // console.log(data2[i],Dis,Code)
         if(data2[i].localeCompare(Code)===0){
             const statedata=data1[i].districts;
-            for (var j=0; j<statedata.length; j++) {
-                if(statedata[j].localeCompare(Dis)===0){
-                    const disdata=statedata[j].total;
+            // console.log(statedata)
+            const data3 = Object.values(statedata);
+            const data4 = Object.keys(statedata);
+            // console.log(data3,data4)
+            for (var j=0; j<data3.length; j++) {
+                // console.log(data4[j],Dis)
+                if(data4[j].localeCompare(Dis)===0){
+                   
+                    const disdata=data3[j].total;
+                    // console.log(disdata)
                     setInfected(disdata.confirmed)
                     setRecovered(disdata.recovered)
                     setDeath(disdata.deceased)
                 }}
             break;
         } } }
+
     fetcher();  
   },[]);
 

@@ -8,8 +8,8 @@ function Homecard({Sta,Dis,Code}) {
 
     return (
             <Grid container spacing={6} direction="row" alignItems="center" justify="center" >
-            <Grid item xs={12} sm={3}><Districtcard Sta={Sta} Dis={Dis} Code={Code}  /></Grid>
             <Grid item xs={12} sm={3}><Statecard Sta={Sta} Dis={Dis} Code={Code} /></Grid>
+            <Grid item xs={12} sm={3}><Districtcard Sta={Sta} Dis={Dis} Code={Code}  /></Grid>
             <Grid item xs={12} sm={3}><Statecard1 Sta={Sta} Dis={Dis} Code={Code} /></Grid>
             </Grid>
     )

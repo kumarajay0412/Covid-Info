@@ -29,7 +29,6 @@ function Statecard({Sta,Dis,Code}) {
     }
     const fetcher1 = async()=>{
         const fetchedData = await vaccineData();
-        console.log(fetchedData)
         for (var i=0; i<fetchedData.length; i++) {
             const as =fetchedData[i].State_name;
             
@@ -37,13 +36,11 @@ function Statecard({Sta,Dis,Code}) {
             
               setDose1(fetchedData[i].dose1);
               setDose2(fetchedData[i].dose2);
-              console.log(Dose1,Dose2)
               break;
           } }          
   }
         fetcher();
         fetcher1();
-        console.log(Dose1,Dose2)
       },[]);
 
     return (
