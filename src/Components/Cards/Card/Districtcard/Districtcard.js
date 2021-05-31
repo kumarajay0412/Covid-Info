@@ -27,6 +27,13 @@ function Districtcard({Sta,Dis,Code}) {
             const data3 = Object.values(statedata);
             const data4 = Object.keys(statedata);
             // console.log(data3,data4)
+            if(Dis.localeCompare("Gurgaon")==0){
+                Dis="Gurugram"
+            }
+            if(Dis.localeCompare("Gautam Buddh Nagar")==0){
+                Dis="Gautam Buddha Nagar"
+            }
+            
             for (var j=0; j<data3.length; j++) {
                 // console.log(data4[j],Dis)
                 if(data4[j].localeCompare(Dis)===0){
