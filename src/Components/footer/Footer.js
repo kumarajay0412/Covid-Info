@@ -31,8 +31,8 @@ const Footer = () => {
                 </Grid>
               
                 <Grid item xs={12} sm={4}> 
-                    <a href="https://www.instagram.com/ajay__kum__ar_/">
-                        <Typography className={classes.black2}> Fell free to collaborate on Gihub</Typography>
+                    <a href="https://github.com/kumarajay0412/Covid-Info">
+                        <Typography className={classes.black2}> Feel free to collaborate on Github</Typography>
                     </a>
                 </Grid>
 
